@@ -15,12 +15,12 @@ def train_and_log_model(model, model_name, X_train, X_test, y_train, y_test):
     with mlflow.start_run(run_name=model_name):
         # Menangani kebutuhan pelatihan khusus model
         if model_name == 'CatBoost':
-            cat_features_indices = [X_train.columns.get_loc(col) for col in categorical_cols if col in X_train.columns]
+            cat_features_indices = [X_train.columns.get_loc(col) for col in categorical_cols if col in X_train.columns] if categorical_cols else []
             model.fit(X_train, y_train, cat_features=cat_features_indices)
         elif model_name == 'LightGBM':
             X_train_lgb = X_train.copy()
             X_test_lgb = X_test.copy()
-            for col in categorical_cols:
+            for col in categorical_cols or []:
                 if col in X_train.columns:
                     X_train_lgb[col] = X_train_lgb[col].astype('category')
                     X_test_lgb[col] = X_test_lgb[col].astype('category')
