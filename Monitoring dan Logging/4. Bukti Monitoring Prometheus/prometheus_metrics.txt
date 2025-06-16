@@ -1,0 +1,10 @@
+1. model_cpu_usage_percent
+2. model_errors_created
+3. model_errors_total
+4. model_memory_usage_percent
+5. model_predicted_class_total
+6. model_prediction_latency_seconds_bucket
+7. model_prediction_latency_seconds_count
+8. model_prediction_latency_seconds_sum
+9. model_requests_total
+10. model_success_rate
