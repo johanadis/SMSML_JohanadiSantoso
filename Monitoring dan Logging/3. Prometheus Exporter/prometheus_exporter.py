@@ -48,29 +48,29 @@ def send_request_to_model():
     try:
         response = requests.post(url, json=data)
         latency = time.time() - start_time
-        prediction_latency.observe(latency)  # Catat latensi
-        request_count.inc()  # Tambah penghitung permintaan
+        prediction_latency.observe(latency)
+        request_count.inc()
         if response.status_code == 200:
-            success_rate.set(1.0)  # Prediksi berhasil
+            success_rate.set(1.0)
             prediction = response.json().get('predictions', [0])[0]
             # Asumsi prediksi adalah float yang mewakili label kelas (0.0 atau 1.0)
             class_label = str(int(prediction))
-            predicted_class.labels(class=class_label).inc()  # Tambah penghitung per kelas
+            predicted_class.labels(class=class_label).inc()
         else:
-            error_count.inc()  # TambahCULiarahkan kesalahan
-            success_rate.set(0.0)  # Prediksi gagal
+            error_count.inc()
+            success_rate.set(0.0)
     except Exception:
-        error_count.inc()  # Tambah penghitung kesalahan
-        success_rate.set(0.0)  # Prediksi gagal
+        error_count.inc()
+        success_rate.set(0.0)
 
 # Fungsi untuk mengumpulkan metrik sistem
 def collect_system_metrics():
-    cpu_usage.set(psutil.cpu_percent())  # Atur penggunaan CPU
-    memory_usage.set(psutil.virtual_memory().percent)  # Atur penggunaan memori
+    cpu_usage.set(psutil.cpu_percent())
+    memory_usage.set(psutil.virtual_memory().percent)
 
 # Loop utama untuk memulai server metrik dan mengirim permintaan
 if __name__ == '__main__':
-    start_http_server(8000)  # Mulai server HTTP Prometheus di port 8000
+    start_http_server(8000)
     print("Server metrik Prometheus berjalan di port 8000")
     while True:
         send_request_to_model()
