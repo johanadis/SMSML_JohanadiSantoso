@@ -118,23 +118,27 @@ def train_and_log_model(model, model_name, X_train, X_test, y_train, y_test, fea
         print(f"{model_name} - Accuracy: {acc:.4f}, AUC-ROC: {auc_roc:.4f}, Training Time: {training_time:.4f}s")
 
 def main():
+    # # Konfigurasi MLflow untuk tracking lokal
+    tracking_uri = "http://127.0.0.1:5000"
+    
     # Konfigurasi MLflow untuk tracking ke Dagshub
-    tracking_uri = 'https://dagshub.com/johanadis/Eksperimen_SML_JohanadiSantoso.mlflow'
-    username = 'johanadis' 
-    token = os.getenv('DAGSHUB_TOKEN')
+    # tracking_uri = 'https://dagshub.com/johanadis/Eksperimen_SML_JohanadiSantoso.mlflow'
+    # username = 'johanadis' 
+    # token = os.getenv('DAGSHUB_TOKEN')
     
-    if not token:
-        raise ValueError("DAGSHUB_TOKEN not set in environment")
+    # if not token:
+    #     raise ValueError("DAGSHUB_TOKEN not set in environment")
     
-    os.environ['MLFLOW_TRACKING_URI'] = tracking_uri
-    os.environ['MLFLOW_TRACKING_USERNAME'] = username
-    os.environ['MLFLOW_TRACKING_PASSWORD'] = token
+    # os.environ['MLFLOW_TRACKING_URI'] = tracking_uri
+    # os.environ['MLFLOW_TRACKING_USERNAME'] = username
+    # os.environ['MLFLOW_TRACKING_PASSWORD'] = token
     
     mlflow.set_tracking_uri(tracking_uri)
     mlflow.set_experiment("Personality_Prediction")
     
     # Load dataset hasil preprocessing
-    df = pd.read_csv('Membangun_model/personality_dataset_preprocessing.csv')
+    df = pd.read_csv('personality_dataset_preprocessing.csv')
+    # df = pd.read_csv('Membangun_model/personality_dataset_preprocessing.csv')
     categorical_cols = ['Stage_fear', 'Drained_after_socializing']
     
     # Pisahkan fitur dan target

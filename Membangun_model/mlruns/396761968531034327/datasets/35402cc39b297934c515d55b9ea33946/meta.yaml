@@ -1,0 +1,15 @@
+digest: 9210fdf6
+name: dataset
+profile: '{"num_rows": 2030, "num_elements": 20300}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "Time_spent_Alone", "required":
+  true}, {"type": "double", "name": "Stage_fear", "required": true}, {"type": "double",
+  "name": "Social_event_attendance", "required": true}, {"type": "double", "name":
+  "Going_outside", "required": true}, {"type": "double", "name": "Drained_after_socializing",
+  "required": true}, {"type": "double", "name": "Friends_circle_size", "required":
+  true}, {"type": "double", "name": "Post_frequency", "required": true}, {"type":
+  "double", "name": "social_alone_ratio", "required": true}, {"type": "double", "name":
+  "friends_and_posts", "required": true}, {"type": "double", "name": "drained_by_social",
+  "required": true}]}'
+source: '{"tags": {"mlflow.user": "adijo", "mlflow.source.name": "modelling.py", "mlflow.source.type":
+  "LOCAL", "mlflow.source.git.commit": "e12b9c9698e0373ab288b8af7cf22b07408e5fd4"}}'
+source_type: code

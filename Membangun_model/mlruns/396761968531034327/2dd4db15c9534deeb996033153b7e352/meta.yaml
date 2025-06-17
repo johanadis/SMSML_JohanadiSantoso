@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/396761968531034327/2dd4db15c9534deeb996033153b7e352/artifacts
+end_time: 1750162103411
+entry_point_name: ''
+experiment_id: '396761968531034327'
+lifecycle_stage: active
+run_id: 2dd4db15c9534deeb996033153b7e352
+run_name: LightGBM
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750162097956
+status: 3
+tags: []
+user_id: adijo

@@ -1,0 +1,10 @@
+artifact_location: mlflow-artifacts:/396761968531034327/models/m-166b52fe423243349d4f856f06632bec/artifacts
+creation_timestamp: 1750162520814
+experiment_id: '396761968531034327'
+last_updated_timestamp: 1750162525626
+model_id: m-166b52fe423243349d4f856f06632bec
+model_type: ''
+name: LightGBM Tuned
+source_run_id: 2159295e9cba430490c7c939f251214f
+status: 2
+status_message: null

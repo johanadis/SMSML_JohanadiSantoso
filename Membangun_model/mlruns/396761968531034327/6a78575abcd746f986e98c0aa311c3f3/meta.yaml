@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/396761968531034327/6a78575abcd746f986e98c0aa311c3f3/artifacts
+end_time: 1750162108388
+entry_point_name: ''
+experiment_id: '396761968531034327'
+lifecycle_stage: active
+run_id: 6a78575abcd746f986e98c0aa311c3f3
+run_name: RandomForest
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750162103452
+status: 3
+tags: []
+user_id: adijo
